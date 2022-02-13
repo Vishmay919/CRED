@@ -20,14 +20,15 @@ const ProductShowcase = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(toggleAnimation, options);
+    const curRef = ref.current
     if (!showAnimation) {
-      if (ref.current) {
-        observer.observe(ref.current);
+      if (curRef) {
+        observer.observe(curRef);
       }
     }
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (curRef) {
+        observer.unobserve(curRef);
       }
     };
   });

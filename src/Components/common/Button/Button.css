@@ -16,7 +16,7 @@
     background-color: var(--bg-light-gray);
 }
 
-@media all and(max-width: 767px){
+@media all and (max-width: 767px){
     .button-wrapper{
         font-size: 18px;
         padding: 16px 24px;

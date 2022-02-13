@@ -19,16 +19,17 @@ const ScreenText = ({ screen, setCurrentImg, i }) => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(setItemVisible, options);
-    if (ref.current) {
-      observer.observe(ref.current);
+    const curRef = ref.current
+    if (curRef) {
+      observer.observe(curRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (curRef) {
+        observer.unobserve(curRef);
       }
     };
-  }, []);
+  },[]);
 
   return (
     <div className={`screen-text ${isVisible ? "text-visible" : ""}`} ref={ref}>
